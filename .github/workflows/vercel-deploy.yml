@@ -1,0 +1,22 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main # Ou votre branche par défaut
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Définissez ceci dans les Secrets GitHub de votre repo
+        #   
+
+          vercel-org-id: AKUMl75LO3Tg4LREIm6NmS3i # Remplacez par votre Vercel Org ID
+        
+          vercel-project-id: prj_es3gq8TnVm7PPieuprt92xtcciPC # Remplacez par votre Vercel Project ID
